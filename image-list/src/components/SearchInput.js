@@ -2,6 +2,9 @@ import React from 'react';
 
 class SearchInput extends React.Component {
 
+    state = {
+        entry:''
+    }
     onInputChange(event){
         console.log(event.target.value)
     }
@@ -14,8 +17,10 @@ class SearchInput extends React.Component {
                             <input 
                                 type="text" 
                                 placeholder='search...'
-                                onChange={this.onInputChange}>
-                            </input>
+                                onChange={(event) => this.setState({entry: event.target.value})}
+                                /*onChange={this.onInputChange}*/
+                                value={this.state.entry}
+                                />                            
                             <i className='search icon'></i>
                         </div>
                     </div>                    
