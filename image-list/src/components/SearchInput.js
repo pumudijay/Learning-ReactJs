@@ -2,14 +2,10 @@ import React from 'react';
 
 class SearchInput extends React.Component {
 
-    constructor(){
-        super();
-        this.onFormSubmit =this.onFormSubmit.bind(this)
-    }
-    state = {
-        entry:''
-    }
-    onFormSubmit( event) {
+    state = { entry:'' }
+
+        /*Arrow function bind this to its function*/
+    onFormSubmit = ( event) => {
         event.preventDefault()
         console.log(this.state.entry)
     }
